@@ -1,0 +1,24 @@
+name: SkExtended
+authors: [ SirSmurfy2 ]
+description: Plugin Description
+api-version: 1.0
+version: ${version}
+depend: [Skript]
+softdepend: [PlayerVaults, GriefPrevention]
+main: com.sirsmurfy2.skextended.SkExtended
+
+commands:
+    skextended:
+        description: SkExtended's main command. Type '/skextended help' for more information
+        aliases: [skext]
+        permission: skextended.admin
+        usage: /skextended help
+
+permissions:
+    skextended.*:
+        default: false
+        children:
+            skextended.admin: true
+    skextended.admin:
+        default: false
+        description: Allows using commands for SkExtended

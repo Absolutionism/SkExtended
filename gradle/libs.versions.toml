@@ -1,0 +1,19 @@
+[versions]
+paper-api = "1.21.4-R0.1-SNAPSHOT"
+lombok = "1.18.34"
+shadow = "8.1.8"
+run-paper = "2.3.0"
+skript = "2.10.0"
+player-vaults = "4.4.2"
+grief-prevention = "16.18.2"
+
+[libraries]
+paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper-api" }
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+skript = { group = "com.github.SkriptLang", name = "Skript", version.ref = "skript"}
+player-vaults = { group = "com.drtshock", name = "PlayerVaultsX", version.ref = "player-vaults"}
+grief-prevention = { group = "com.github.GriefPrevention", name = "GriefPrevention", version.ref = "grief-prevention"}
+
+[plugins]
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
+shadow = { id = "io.github.goooler.shadow", version.ref = "shadow" }

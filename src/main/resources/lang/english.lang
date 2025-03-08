@@ -1,0 +1,27 @@
+version: @version@
+
+blacklisted reason types:
+	enchantment: blacklisted enchantment
+	has_model_data: blacklisted model data
+	has_no_model_data: blacklisted no model data
+	type: blacklisted type
+
+claim permissions:
+	edit: claim edit permission, edit claim permission
+	build: claim build permission, build claim permission
+	inventory: claim inventory permission, inventory claim permission
+	access: claim access permission, access claim permission
+	manage: claim manage permission, manage claim permission
+
+types:
+	# --- Alignment ---
+	messagebuilder: message builder¦s @a
+	linebuilder: line builder¦s @a
+	alignedtext: aligned text¦s @an
+
+	# --- PlayerVaultsX ---
+	blacklistedreasontype: black[ ]listed reason type¦s @a
+
+	# --- GriefPrevention ---
+	claim: claim¦s @a
+	claimpermission: claim permission¦s @a
