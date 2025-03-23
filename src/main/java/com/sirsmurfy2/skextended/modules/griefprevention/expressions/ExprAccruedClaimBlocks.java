@@ -4,7 +4,7 @@ import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.doc.*;
 import ch.njol.util.Math2;
 import ch.njol.util.coll.CollectionUtils;
-import com.sirsmurfy2.skextended.lang.SimpleEventValueExpression;
+import com.sirsmurfy2.skextended.lang.SimpleEventRestrictedExpression;
 import me.ryanhamshire.GriefPrevention.events.AccrueClaimBlocksEvent;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 })
 @Since("1.0.0")
 @RequiredPlugins("GriefPrevention")
-public class ExprAccruedClaimBlocks extends SimpleEventValueExpression<AccrueClaimBlocksEvent, Integer> {
+public class ExprAccruedClaimBlocks extends SimpleEventRestrictedExpression<AccrueClaimBlocksEvent, Integer> {
 
 	static {
 		register(ExprAccruedClaimBlocks.class, Integer.class, "[the] [grief prevention] (accrued|gained) claim blocks");

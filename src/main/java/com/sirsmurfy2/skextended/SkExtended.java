@@ -5,6 +5,7 @@ import ch.njol.skript.SkriptAddon;
 import ch.njol.skript.util.Version;
 import com.sirsmurfy2.skextended.Metrics.SimplePie;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -80,6 +81,10 @@ public final class SkExtended extends JavaPlugin {
 
 	public static void debug(String message) {
 		Bukkit.getConsoleSender().sendMessage("[SkExtended] " + message);
+	}
+
+	public static void sendMessage(CommandSender commandSender, String message) {
+		commandSender.sendMessage(message);
 	}
 
 }

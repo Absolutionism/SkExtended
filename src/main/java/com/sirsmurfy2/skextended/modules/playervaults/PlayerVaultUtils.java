@@ -1,4 +1,4 @@
-package com.sirsmurfy2.skextended.utils;
+package com.sirsmurfy2.skextended.modules.playervaults;
 
 import com.drtshock.playervaults.vaultmanagement.VaultHolder;
 import com.drtshock.playervaults.vaultmanagement.VaultManager;
@@ -12,32 +12,38 @@ import java.util.Set;
 
 public class PlayerVaultUtils {
 
+	private static final VaultManager vaultManager;
+
+	static {
+		vaultManager = VaultManager.getInstance();
+	}
+
 	public static boolean vaultExists(OfflinePlayer player, int vault) {
-		return VaultManager.getInstance().vaultExists(player.getUniqueId().toString(), vault);
+		return vaultManager.vaultExists(player.getUniqueId().toString(), vault);
 	}
 
 	public static Set<Integer> getVaultNumbers(OfflinePlayer player) {
-		return VaultManager.getInstance().getVaultNumbers(player.getUniqueId().toString());
+		return vaultManager.getVaultNumbers(player.getUniqueId().toString());
 	}
 
 	public static void deleteVault(OfflinePlayer player, int vault) {
 		if (!vaultExists(player, vault))
 			return;
-		VaultManager.getInstance().deleteVault(Bukkit.getConsoleSender(), player.getUniqueId().toString(), vault);
+		vaultManager.deleteVault(Bukkit.getConsoleSender(), player.getUniqueId().toString(), vault);
 	}
 
 	public static void deleteVaults(OfflinePlayer player) {
-		VaultManager.getInstance().deleteAllVaults(player.getUniqueId().toString());
+		vaultManager.deleteAllVaults(player.getUniqueId().toString());
 	}
 
 	public static @Nullable Inventory getVault(OfflinePlayer player, int vault) {
 		if (!vaultExists(player, vault))
 			return null;
-		return VaultManager.getInstance().getVault(player.getUniqueId().toString(), vault);
+		return vaultManager.getVault(player.getUniqueId().toString(), vault);
 	}
 
 	public static void setVault(OfflinePlayer player, int vault, Inventory inventory) {
-		VaultManager.getInstance().saveVault(inventory, player.getUniqueId().toString(), vault);
+		vaultManager.saveVault(inventory, player.getUniqueId().toString(), vault);
 	}
 
 	public static ItemStack @Nullable [] getItems(OfflinePlayer player, int vault) {

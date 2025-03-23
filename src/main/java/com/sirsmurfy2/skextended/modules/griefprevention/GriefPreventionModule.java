@@ -12,6 +12,7 @@ import org.bukkit.World;
 import org.skriptlang.skript.lang.converter.Converters;
 
 public class GriefPreventionModule extends ModuleLoader {
+
 	@Override
 	public void loadModule() {
 		Classes.registerClass(new ClassInfo<>(Claim.class, "claim")
@@ -34,4 +35,5 @@ public class GriefPreventionModule extends ModuleLoader {
 
 		Converters.registerConverter(Claim.class, World.class, claim -> claim.getLesserBoundaryCorner().getWorld());
 	}
+
 }

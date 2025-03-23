@@ -2,7 +2,7 @@ package com.sirsmurfy2.skextended.modules.playervaults.conditions;
 
 import ch.njol.skript.conditions.base.PropertyCondition;
 import ch.njol.skript.doc.*;
-import com.sirsmurfy2.skextended.utils.PlayerVaultUtils;
+import com.sirsmurfy2.skextended.modules.playervaults.PlayerVaultUtils;
 import org.bukkit.inventory.Inventory;
 
 @Name("Inventory Is Player Vault")

@@ -12,7 +12,7 @@ import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 import org.skriptlang.skript.log.runtime.SyntaxRuntimeErrorProducer;
 
-public abstract class SimpleEventValueExpression<E extends Event, R> extends SimpleExpression<R> implements SyntaxRuntimeErrorProducer {
+public abstract class SimpleEventRestrictedExpression<E extends Event, R> extends SimpleExpression<R> implements SyntaxRuntimeErrorProducer {
 
 	public static <R> void register(
 		Class<? extends Expression<R>> expressionClass,
@@ -27,11 +27,11 @@ public abstract class SimpleEventValueExpression<E extends Event, R> extends Sim
 
 	@Override
 	public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
-		Class<? extends E> expectedEvent = getEventClass();
+		Class<? extends E> eventClass = getEventClass();
 		expr = parseResult.expr;
 		node = getParser().getNode();
-		if (!getParser().isCurrentEvent(expectedEvent)) {
-			String eventName = SkriptUtils.getRegisteredEventName(expectedEvent);
+		if (!getParser().isCurrentEvent(eventClass)) {
+			String eventName = SkriptUtils.getRegisteredEventName(eventClass);
 			Skript.error("This expression can only be used in a(n) '" + eventName + "' event");
 			return false;
 		}

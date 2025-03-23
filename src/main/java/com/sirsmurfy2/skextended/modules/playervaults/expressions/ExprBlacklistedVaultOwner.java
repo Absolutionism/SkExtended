@@ -3,7 +3,7 @@ package com.sirsmurfy2.skextended.modules.playervaults.expressions;
 import ch.njol.skript.Skript;
 import ch.njol.skript.doc.*;
 import com.drtshock.playervaults.events.BlacklistedItemEvent;
-import com.sirsmurfy2.skextended.lang.SimpleEventValueExpression;
+import com.sirsmurfy2.skextended.lang.SimpleEventRestrictedExpression;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.Nullable;
@@ -19,7 +19,7 @@ import java.util.UUID;
 })
 @Since("1.0.0")
 @RequiredPlugins("PlayerVaultsX 4.4.0+")
-public class ExprBlacklistedVaultOwner extends SimpleEventValueExpression<BlacklistedItemEvent, OfflinePlayer> {
+public class ExprBlacklistedVaultOwner extends SimpleEventRestrictedExpression<BlacklistedItemEvent, OfflinePlayer> {
 
 	static {
 		if (Skript.classExists("com.drtshock.playervaults.events.BlacklistedItemEvent"))

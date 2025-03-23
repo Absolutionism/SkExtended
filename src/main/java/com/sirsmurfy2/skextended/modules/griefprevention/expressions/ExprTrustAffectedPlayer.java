@@ -1,7 +1,7 @@
 package com.sirsmurfy2.skextended.modules.griefprevention.expressions;
 
 import ch.njol.skript.doc.*;
-import com.sirsmurfy2.skextended.lang.SimpleEventValueExpression;
+import com.sirsmurfy2.skextended.lang.SimpleEventRestrictedExpression;
 import me.ryanhamshire.GriefPrevention.events.TrustChangedEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -17,7 +17,7 @@ import java.util.UUID;
 })
 @Since("1.0.0")
 @RequiredPlugins("GriefPrevention")
-public class ExprTrustAffectedPlayer extends SimpleEventValueExpression<TrustChangedEvent, OfflinePlayer> {
+public class ExprTrustAffectedPlayer extends SimpleEventRestrictedExpression<TrustChangedEvent, OfflinePlayer> {
 
 	static {
 		register(ExprTrustAffectedPlayer.class, OfflinePlayer.class, "[the] [grief prevention] trust affected player");

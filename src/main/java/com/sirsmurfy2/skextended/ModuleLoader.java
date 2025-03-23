@@ -5,6 +5,7 @@ import com.sirsmurfy2.skextended.modules.alignment.AlignmentModule;
 import com.sirsmurfy2.skextended.modules.equation.EquationModule;
 import com.sirsmurfy2.skextended.modules.griefprevention.GriefPreventionModule;
 import com.sirsmurfy2.skextended.modules.playervaults.PlayerVaultsModule;
+import com.sirsmurfy2.skextended.modules.shopkeepers.ShopkeeperModule;
 import com.sirsmurfy2.skextended.utils.ReflectUtils;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,7 @@ public abstract class ModuleLoader {
 		modules.add(new ModuleInfo(EquationModule.class, null, "equation"));
 		modules.add(new ModuleInfo(PlayerVaultsModule.class, "PlayerVaults", "playervaults"));
 		modules.add(new ModuleInfo(GriefPreventionModule.class, "GriefPrevention", "griefprevention"));
+		modules.add(new ModuleInfo(ShopkeeperModule.class, "shopkeepers", "shopkeepers"));
 	}
 
 	public static void loadModules() throws Exception {
@@ -34,14 +36,13 @@ public abstract class ModuleLoader {
         }
 	}
 
-	@SuppressWarnings("ClassEscapesDefinedScope")
 	public static ImmutableList<ModuleInfo> getModules() {
 		return ImmutableList.copyOf(modules);
 	}
 
 	public abstract void loadModule();
 
-	private static class ModuleInfo {
+	public static class ModuleInfo {
 		private final Class<? extends ModuleLoader> module;
 		private final @Nullable String plugin;
 		private final String path;

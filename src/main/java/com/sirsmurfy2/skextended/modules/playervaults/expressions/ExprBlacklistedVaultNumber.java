@@ -3,7 +3,7 @@ package com.sirsmurfy2.skextended.modules.playervaults.expressions;
 import ch.njol.skript.Skript;
 import ch.njol.skript.doc.*;
 import com.drtshock.playervaults.events.BlacklistedItemEvent;
-import com.sirsmurfy2.skextended.lang.SimpleEventValueExpression;
+import com.sirsmurfy2.skextended.lang.SimpleEventRestrictedExpression;
 import org.jetbrains.annotations.Nullable;
 
 @Name("Blacklisted Vault Number")
@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 })
 @Since("1.0.0")
 @RequiredPlugins("PlayerVaultsX 4.4.0+")
-public class ExprBlacklistedVaultNumber extends SimpleEventValueExpression<BlacklistedItemEvent, Integer> {
+public class ExprBlacklistedVaultNumber extends SimpleEventRestrictedExpression<BlacklistedItemEvent, Integer> {
 
 	static {
 		if (Skript.classExists("com.drtshock.playervaults.events.BlacklistedItemEvent"))

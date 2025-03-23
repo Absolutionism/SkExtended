@@ -14,6 +14,7 @@ repositories {
     maven("https://repo.skriptlang.org/releases")
 	maven("https://ci.ender.zone/plugin/repository/everything/")
 	maven("https://jitpack.io")
+	maven("https://raw.githubusercontent.com/Shopkeepers/Repository/main/releases/")
 }
 
 java {
@@ -31,12 +32,13 @@ dependencies { // If you would like to modify anything here, head to gradle/libs
 		exclude(group = "org.kitteh", module = "paste-gg-api")
 	}
 	compileOnly(libs.grief.prevention)
+	compileOnly(libs.shopkeepers)
     annotationProcessor(libs.lombok)
 }
 
 group = "com.sirsmurfy2.skextended"
 version = "1.0.0"
-description = "Plugin Description"
+description = "A Skript Addon to extend Skript's reach."
 
 tasks {
     jar {

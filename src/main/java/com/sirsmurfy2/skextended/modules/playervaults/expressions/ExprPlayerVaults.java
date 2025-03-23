@@ -10,7 +10,7 @@ import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.SyntaxStringBuilder;
 import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
-import com.sirsmurfy2.skextended.utils.PlayerVaultUtils;
+import com.sirsmurfy2.skextended.modules.playervaults.PlayerVaultUtils;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Event;
 import org.bukkit.inventory.Inventory;

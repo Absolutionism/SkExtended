@@ -1,10 +1,10 @@
 name: SkExtended
 authors: [ SirSmurfy2 ]
-description: Plugin Description
+description: A Skript Addon to extend Skript's reach.
 api-version: 1.0
 version: ${version}
 depend: [Skript]
-softdepend: [PlayerVaults, GriefPrevention]
+softdepend: [PlayerVaults, GriefPrevention, Shopkeepers]
 main: com.sirsmurfy2.skextended.SkExtended
 
 commands:

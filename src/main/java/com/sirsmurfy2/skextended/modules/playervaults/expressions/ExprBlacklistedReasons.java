@@ -6,7 +6,7 @@ import ch.njol.skript.doc.*;
 import ch.njol.util.coll.CollectionUtils;
 import com.drtshock.playervaults.events.BlacklistedItemEvent;
 import com.drtshock.playervaults.events.BlacklistedItemEvent.Reason;
-import com.sirsmurfy2.skextended.lang.SimpleEventValueExpression;
+import com.sirsmurfy2.skextended.lang.SimpleEventRestrictedExpression;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 })
 @Since("1.0.0")
 @RequiredPlugins("PlayerVaultsX 4.4.0+")
-public class ExprBlacklistedReasons extends SimpleEventValueExpression<BlacklistedItemEvent, Reason> {
+public class ExprBlacklistedReasons extends SimpleEventRestrictedExpression<BlacklistedItemEvent, Reason> {
 
 	static {
 		if (Skript.classExists("com.drtshock.playervaults.events.BlacklistedItemEvent"))

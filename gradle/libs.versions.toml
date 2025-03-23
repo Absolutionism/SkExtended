@@ -6,6 +6,7 @@ run-paper = "2.3.0"
 skript = "2.10.0"
 player-vaults = "4.4.2"
 grief-prevention = "16.18.2"
+shopkeepers = "2.15.1"
 
 [libraries]
 paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper-api" }
@@ -13,6 +14,7 @@ lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" 
 skript = { group = "com.github.SkriptLang", name = "Skript", version.ref = "skript"}
 player-vaults = { group = "com.drtshock", name = "PlayerVaultsX", version.ref = "player-vaults"}
 grief-prevention = { group = "com.github.GriefPrevention", name = "GriefPrevention", version.ref = "grief-prevention"}
+shopkeepers = { group = "com.nisovin.shopkeepers", name = "ShopkeepersAPI", version.ref = "shopkeepers"}
 
 [plugins]
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }

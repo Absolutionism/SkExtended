@@ -6,7 +6,7 @@ import ch.njol.skript.lang.Effect;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.Kleenean;
-import com.sirsmurfy2.skextended.utils.PlayerVaultUtils;
+import com.sirsmurfy2.skextended.modules.playervaults.PlayerVaultUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Event;
