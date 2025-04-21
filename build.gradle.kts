@@ -34,11 +34,53 @@ dependencies { // If you would like to modify anything here, head to gradle/libs
 	compileOnly(libs.grief.prevention)
 	compileOnly(libs.shopkeepers)
     annotationProcessor(libs.lombok)
+
+	implementation("com.google.code.gson:gson:2.10.1")
+	implementation("com.google.guava:guava:32.1.2-jre")
+
 }
 
 group = "com.sirsmurfy2.skextended"
 version = "1.0.0"
 description = "A Skript Addon to extend Skript's reach."
+
+val skriptVersion = "2.11.0"
+val addonPath = "build/libs/SkExtended-$version.jar"
+val testScriptsPath = "src/test/scripts"
+val extraPluginsPath = "extra-plugins"
+
+fun createTestTask(action : String) {
+	tasks.register<JavaExec>(action + "Vanilla") {
+		group = "execution"
+		environment("INPUT_TEST_SCRIPT_DIRECTORY", testScriptsPath)
+		environment("INPUT_EXTRA_PLUGINS_DIRECTORY", extraPluginsPath)
+		environment("INPUT_SKRIPT_REPO_REF", skriptVersion)
+		environment("INPUT_SKRIPT_TEST_ACTION", action)
+		environment("INPUT_RUN_VANILLA_TESTS", "true")
+		environment("INPUT_ADDON_JAR_PATH", addonPath)
+
+		mainClass.set("com.sirsmurfy2.skextended.SkriptTestEnvironment")
+		classpath = sourceSets["main"].runtimeClasspath
+	}
+	tasks.register<JavaExec>(action) {
+		group = "execution"
+		environment("INPUT_TEST_SCRIPT_DIRECTORY", testScriptsPath)
+		environment("INPUT_EXTRA_PLUGINS_DIRECTORY", extraPluginsPath)
+		environment("INPUT_SKRIPT_REPO_REF", skriptVersion)
+		environment("INPUT_SKRIPT_TEST_ACTION", action)
+		environment("INPUT_RUN_VANILLA_TESTS", "false")
+		environment("INPUT_ADDON_JAR_PATH", addonPath)
+
+		mainClass.set("com.sirsmurfy2.skextended.SkriptTestEnvironment")
+		classpath = sourceSets["main"].runtimeClasspath
+	}
+}
+
+createTestTask("quickTest")
+createTestTask("skriptTestDev")
+createTestTask("skriptTestJava17")
+createTestTask("skriptTestJava21")
+
 
 tasks {
     jar {

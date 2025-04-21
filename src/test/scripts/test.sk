@@ -1,0 +1,3 @@
+
+test "addon github gradle environment":
+	assert true is false with "Testing GitHub Gradle Environment"

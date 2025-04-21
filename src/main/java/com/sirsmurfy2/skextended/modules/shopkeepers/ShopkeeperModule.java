@@ -2,6 +2,7 @@ package com.sirsmurfy2.skextended.modules.shopkeepers;
 
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.classes.ClassInfo;
+import ch.njol.skript.expressions.base.EventValueExpression;
 import ch.njol.skript.registrations.Classes;
 import ch.njol.util.coll.CollectionUtils;
 import com.nisovin.shopkeepers.api.shopkeeper.Shopkeeper;
@@ -37,6 +38,7 @@ public class ShopkeeperModule extends ModuleLoader {
 						shopkeeper.delete();
 				}
 			})
+			.defaultExpression(new EventValueExpression<>(Shopkeeper.class))
 		);
 
 		Converters.registerConverter(Entity.class, Shopkeeper.class, ShopkeeperUtils::getShopkeeper);

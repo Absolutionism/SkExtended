@@ -16,3 +16,5 @@ indent_size = 4
 trim_trailing_whitespace=false
 [*.sk]
 indent_style = tab
+[*.py]
+indent_style = tab
