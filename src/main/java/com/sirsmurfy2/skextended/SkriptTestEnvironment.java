@@ -95,8 +95,10 @@ public class SkriptTestEnvironment {
 			processBuilder.environment().put(entry.getKey(), entry.getValue());
 		}
         try {
-            processBuilder.start();
-        } catch (IOException e) {
+            Process process = processBuilder.start();
+			int exitCode = process.waitFor();
+			System.exit(exitCode);
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
