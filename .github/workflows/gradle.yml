@@ -67,6 +67,11 @@ jobs:
                   java-version: '21'
                   distribution: 'adopt'
                   cache: gradle
+            -   name: Download artifacts
+                uses: actions/download-artifact@v4
+                with:
+                    path: extra-plugins/
+                    merge-multiple: true
             - name: Grant execute permission
               run: chmod +x gradlew
             - name: Build Environment

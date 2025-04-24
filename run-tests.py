@@ -23,8 +23,10 @@ class EnvironmentResource(TypedDict):
 # Pathways / Directories
 gradle_command = "gradlew.bat" if platform.system() == "Windows" else "./gradlew"
 workspace_directory = Path("/github/workspace")
+is_github_test = True
 if not workspace_directory.exists():
 	workspace_directory = Path(__file__).parent.resolve()
+	is_github_test = False
 plugins_storage = workspace_directory / "build" / "extra-plugins"
 skript_repo_git_url = "https://github.com/SkriptLang/Skript.git"
 skript_repo_path = workspace_directory / "build/Skript"
@@ -69,10 +71,11 @@ for environment_file_path in environments_dir.glob("**/*.json"):
 		if "resources" not in environment:
 			environment["resources"] = []
 		resources = environment["resources"]
-		resources.append(EnvironmentResource(
-			source=str(addon_jar_path.absolute().resolve()),
-			target=f"plugins/{addon_jar_path.name}"
-		))
+		if not is_github_test:
+			resources.append(EnvironmentResource(
+				source=str(addon_jar_path.absolute().resolve()),
+				target=f"plugins/{addon_jar_path.name}"
+			))
 		if plugins_storage.exists():
 			for plugin_path in plugins_storage.iterdir():
 				resources.append(EnvironmentResource(
